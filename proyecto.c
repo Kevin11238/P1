@@ -207,8 +207,8 @@
 			p ("\n\n\t Varianza: %.4f", varianza);
 			p ("\n\n\t Desviacion Estandar: %f ", desviacion);
 			p ("\n\n\t La Moda es el num. : %d ", A[pos_mayor]);
-			p ("\n\n\t El num total de alumnos aprobados son: %d (%.2f %).", aprobados, a_porcentaje);
-			p ("\n\n\t El num total de alumnos reprobados son: %d (%.2f %).", reprobados, r_porcentaje);
+			p ("\n\n\t El num total de alumnos aprobados son: %d (%.2f)", aprobados, a_porcentaje);
+			p ("\n\n\t El num total de alumnos reprobados son: %d (%.2f)", reprobados, r_porcentaje);
 			p ("\n\n\t Alumnos totales aspirantes a becas: %d", becas);
 			accion=2;
 		break;
