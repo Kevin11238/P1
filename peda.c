@@ -215,11 +215,17 @@ void ordenarPorCodigo(Producto inventario[], int numProductos) {
         }
     }
 
-    printf("Inventario ordenado por código:\n");
-    for (i = 0; i < numProductos; i++) {
-        printf("Código: %s, Nombre: %s\n", inventario[i].codigo, inventario[i].nombre);
+    printf("\nINVENTARIO ORDENADO POR CODIGO \n");
+    printf("-------------------------------------------------\n");
+    printf("Código\t\tNombre\t\n");
+    printf("-------------------------------------------------\n");
+    for (int i = 0; i < numProductos; i++) {
+        printf("%s\t\t%s\t\n", inventario[i].codigo, inventario[i].nombre);
     }
+    printf("-------------------------------------------------\n");
 }
+
+
 
 void ordenarPorNombre(Producto inventario[], int numProductos) {
     int i, j;
@@ -234,11 +240,16 @@ void ordenarPorNombre(Producto inventario[], int numProductos) {
             }
         }
     }
-
-    printf("Inventario ordenado por nombre:\n");
-    for (i = 0; i < numProductos; i++) {
-        printf("Código: %s, Nombre: %s\n", inventario[i].codigo, inventario[i].nombre);
+    
+printf("\nINVENTARIO ORDENADO POR NOMBRE \n");
+    printf("-------------------------------------------------\n");
+    printf("Código\t\tNombre\t\n");
+    printf("-------------------------------------------------\n");
+    for (int i = 0; i < numProductos; i++) {
+        printf("%s\t\t%s\t\n", inventario[i].codigo, inventario[i].nombre);
     }
+    printf("-------------------------------------------------\n");
+
 }
 
 /*APARTADO DE ATENCION AL CLIENTE*/
