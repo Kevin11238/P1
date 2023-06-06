@@ -95,6 +95,8 @@ int main() {
     return 0;
 }
 
+/*APARTADO DE ADMINISTRACION DE INVENTARIO */
+
 void administrarInventario(Producto inventario[], int *numProductos) {
     int opcion;
 
@@ -186,6 +188,61 @@ void administrarInventario(Producto inventario[], int *numProductos) {
     } while (opcion != 0);
 }
 
+
+void mostrarInventario(Producto inventario[], int numProductos) {
+    printf("\nINVENTARIO\n");
+    printf("-------------------------------------------------\n");
+    printf("Código\t\tNombre\t\tCantidad\tPrecio\n");
+    printf("-------------------------------------------------\n");
+    for (int i = 0; i < numProductos; i++) {
+        printf("%s\t\t%s\t\t%d\t\t%.2f\n", inventario[i].codigo, inventario[i].nombre, inventario[i].cantidad, inventario[i].precio);
+    }
+    printf("-------------------------------------------------\n");
+}
+
+
+void ordenarPorCodigo(Producto inventario[], int numProductos) {
+    int i, j;
+    Producto temp;
+
+    for (i = 0; i < numProductos - 1; i++) {
+        for (j = 0; j < numProductos - i - 1; j++) {
+            if (strcmp(inventario[j].codigo, inventario[j + 1].codigo) > 0) {
+                temp = inventario[j];
+                inventario[j] = inventario[j + 1];
+                inventario[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Inventario ordenado por código:\n");
+    for (i = 0; i < numProductos; i++) {
+        printf("Código: %s, Nombre: %s\n", inventario[i].codigo, inventario[i].nombre);
+    }
+}
+
+void ordenarPorNombre(Producto inventario[], int numProductos) {
+    int i, j;
+    Producto temp;
+
+    for (i = 0; i < numProductos - 1; i++) {
+        for (j = 0; j < numProductos - i - 1; j++) {
+            if (strcmp(inventario[j].nombre, inventario[j + 1].nombre) > 0) {
+                temp = inventario[j];
+                inventario[j] = inventario[j + 1];
+                inventario[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Inventario ordenado por nombre:\n");
+    for (i = 0; i < numProductos; i++) {
+        printf("Código: %s, Nombre: %s\n", inventario[i].codigo, inventario[i].nombre);
+    }
+}
+
+/*APARTADO DE ATENCION AL CLIENTE*/
+
 void atenderClientes(Producto inventario[], int numProductos) {
     int opcion;
 
@@ -242,57 +299,7 @@ void atenderClientes(Producto inventario[], int numProductos) {
     } while (opcion != 0);
 }
 
-void mostrarInventario(Producto inventario[], int numProductos) {
-    printf("\nINVENTARIO\n");
-    printf("-------------------------------------------------\n");
-    printf("Código\t\tNombre\t\tCantidad\tPrecio\n");
-    printf("-------------------------------------------------\n");
-    for (int i = 0; i < numProductos; i++) {
-        printf("%s\t\t%s\t\t%d\t\t%.2f\n", inventario[i].codigo, inventario[i].nombre, inventario[i].cantidad, inventario[i].precio);
-    }
-    printf("-------------------------------------------------\n");
-}
-
-
-void ordenarPorCodigo(Producto inventario[], int numProductos) {
-    int i, j;
-    Producto temp;
-
-    for (i = 0; i < numProductos - 1; i++) {
-        for (j = 0; j < numProductos - i - 1; j++) {
-            if (strcmp(inventario[j].codigo, inventario[j + 1].codigo) > 0) {
-                temp = inventario[j];
-                inventario[j] = inventario[j + 1];
-                inventario[j + 1] = temp;
-            }
-        }
-    }
-
-    printf("Inventario ordenado por código:\n");
-    for (i = 0; i < numProductos; i++) {
-        printf("Código: %s, Nombre: %s\n", inventario[i].codigo, inventario[i].nombre);
-    }
-}
-
-void ordenarPorNombre(Producto inventario[], int numProductos) {
-    int i, j;
-    Producto temp;
-
-    for (i = 0; i < numProductos - 1; i++) {
-        for (j = 0; j < numProductos - i - 1; j++) {
-            if (strcmp(inventario[j].nombre, inventario[j + 1].nombre) > 0) {
-                temp = inventario[j];
-                inventario[j] = inventario[j + 1];
-                inventario[j + 1] = temp;
-            }
-        }
-    }
-
-    printf("Inventario ordenado por nombre:\n");
-    for (i = 0; i < numProductos; i++) {
-        printf("Código: %s, Nombre: %s\n", inventario[i].codigo, inventario[i].nombre);
-    }
-}
+/*APARTADO DE ADMINISTRACION DE PERSONAL*/
 
 void administrarPersonal(Trabajador personal[], int *numTrabajadores) {
     int opcion;
